@@ -298,19 +298,24 @@ void CircuitView::slotPaste()
 
 void CircuitView::slotProperties()
 {
-    if( m_properties ) m_propertiesW->show();
-    else
-    {
-        if( m_help == "" )
-        {
-            m_help = MainWindow::self()->getHelpFile( "circuit" );
-        }
-        m_propertiesW = MainWindow::self()->createPropWidget( m_circuit, &m_help );
-        QPoint p = CircuitWidget::self()->mapToGlobal( QPoint(50, 50) );
-        m_propertiesW->move( p.x(), p.y() );
-
-        m_properties = true;
-    }
+	/**/
+	QPropertyEditorWidget::self()->setObject( m_circuit );
+	PropertiesWidget::self()->setHelpText( MainWindow::self()->circHelp() );
+	MainWindow::self()->m_sidepanel->setCurrentIndex( 2 ); // Open Properties tab
+	/**/
+    //if( m_properties ) m_propertiesW->show();
+    //else
+    //{
+        //if( m_help == "" )
+        //{
+            //m_help = MainWindow::self()->getHelpFile( "circuit" );
+        //}
+        //m_propertiesW = MainWindow::self()->createPropWidget( m_circuit, &m_help );
+        //QPoint p = CircuitWidget::self()->mapToGlobal( QPoint(50, 50) );
+        //m_propertiesW->move( p.x(), p.y() );
+//
+        //m_properties = true;
+    //}
 }
 
 void CircuitView::saveImage()
