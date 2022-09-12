@@ -1168,15 +1168,16 @@ void Circuit::mousePressEvent( QGraphicsSceneMouseEvent* event )
     {
         if( m_conStarted )  event->accept();
         QGraphicsScene::mousePressEvent( event );
-		/**/
-		QPropertyEditorWidget::self()->setObject( this );
-		PropertiesWidget::self()->setHelpText( MainWindow::self()->circHelp() );
-		/**/
     }
     else if( event->button() == Qt::RightButton )
     {
         if( m_conStarted ) event->accept();
         else                QGraphicsScene::mousePressEvent( event );
+		/**/
+		QPropertyEditorWidget::self()->setObject( this );
+		PropertiesWidget::self()->setHelpText( MainWindow::self()->circHelp() );
+		MainWindow::self()->m_sidepanel->setCurrentIndex( 2 ); // Open Properties tab
+		/**/
     }
     else if( event->button() == Qt::MidButton )
     {

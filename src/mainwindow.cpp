@@ -233,15 +233,15 @@ void MainWindow::createWidgets()
 
     m_sidepanel->addTab( m_componentWidget, tr("Components") );
 
+    m_fileSystemTree = new FileWidget( this );
+    m_fileSystemTree->setObjectName( "fileExplorer" );
+    m_sidepanel->addTab( m_fileSystemTree, tr( "File explorer" ) );
+
 	/**/
     m_itemprop = new PropertiesWidget( this );
     m_itemprop->setObjectName( "properties" );
     m_sidepanel->addTab( m_itemprop,  tr( "Properties" ));
 	/**/
-
-    m_fileSystemTree = new FileWidget( this );
-    m_fileSystemTree->setObjectName( "fileExplorer" );
-    m_sidepanel->addTab( m_fileSystemTree, tr( "File explorer" ) );
 
     m_circuit = new CircuitWidget( this );
     m_circuit->setObjectName( "circuit" );

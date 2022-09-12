@@ -148,6 +148,7 @@ void Component::mousePressEvent( QGraphicsSceneMouseEvent* event )
 			/**/
 			QPropertyEditorWidget::self()->setObject( this );
 			PropertiesWidget::self()->setHelpText( &m_help );
+			MainWindow::self()->m_sidepanel->setCurrentIndex( 2 ); // Open Properties tab
 			/**/
             setCursor( Qt::ClosedHandCursor );
         }
@@ -296,6 +297,7 @@ void Component::mouseDoubleClickEvent( QGraphicsSceneMouseEvent* event )
 		/**/
 		QPropertyEditorWidget::self()->setObject( this );
 		PropertiesWidget::self()->setHelpText( &m_help );
+		MainWindow::self()->m_sidepanel->setCurrentIndex( 2 ); // Open Properties tab
 		/**/
 
 	}
@@ -357,6 +359,7 @@ void Component::slotProperties()
 		/**/
 		QPropertyEditorWidget::self()->setObject( this );
 		PropertiesWidget::self()->setHelpText( &m_help );
+		MainWindow::self()->m_sidepanel->setCurrentIndex( 2 ); // Open Properties tab
 		/**/
         m_properties = true;
     }
